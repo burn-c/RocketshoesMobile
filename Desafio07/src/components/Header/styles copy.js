@@ -1,11 +1,9 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
-
 import logo from '../../assets/logo.png';
 
 export const Wrapper = styled.SafeAreaView`
   flex: 0;
-  background: ${colors.dark};
+  background: #000;
   flex-direction: row;
 `;
 
@@ -33,16 +31,16 @@ export const BasketContainer = styled.TouchableOpacity`
 `;
 
 export const ItemCount = styled.Text`
-  position: absolute;
-  text-align: center;
-  top: -8px;
-  right: -8px;
-  min-width: 18px;
-  min-height: 18px;
-  background: ${colors.primary};
   color: #fff;
-  font-size: 12px;
+  font-size: 15px;
+  background: #7159c1;
   padding: 2px;
   border-radius: 9px;
+  text-align: center;
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 18px;
+  min-height: 18px;
   overflow: hidden;
 `;

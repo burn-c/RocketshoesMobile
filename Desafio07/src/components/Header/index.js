@@ -4,20 +4,23 @@ import { connect } from 'react-redux';
 
 import { Wrapper, Container, Logo, BasketContainer, ItemCount } from './styles';
 
-function Header({ cartSize }) {
+function Header({ navigation, cartSize }) {
   return (
     <Wrapper>
       <Container>
         <Logo />
-        <BasketContainer>
+        <BasketContainer onPress={() => navigation.navigate('Cart')}>
           <Icon name="shopping-basket" color="#FFF" size={24} />
-          <ItemCount>{cartSize}</ItemCount>
+          <ItemCount>{cartSize || 0}</ItemCount>
         </BasketContainer>
       </Container>
     </Wrapper>
   );
 }
 
-export default connect(state => ({
-  cartSize: state.cart.length, // pega a quantidade de produtos dentro do cart
-}))(Header);
+export default connect(
+  state => ({
+    cartSize: state.cart.length, // pega a quantidade de produtos dentro do cart
+  }),
+  null
+)(Header);
